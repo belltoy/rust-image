@@ -39,8 +39,6 @@ jobs:
         with:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ vars.IMAGE_PREFIX }}rust:${{ vars.IMAGE_TAG }}
-          platforms:
-            - linux/amd64
-            - linux/arm64
+          platforms: linux/amd64,linux/arm64
           build-args: |
             BASE_RUST_IMAGE_TAG=${{ vars.BASE_RUST_IMAGE_TAG }}
